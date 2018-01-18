@@ -1,0 +1,29 @@
+<nav class="navigation">
+    <div class="logo">N</div>
+    <ul class="nav float-left">
+        <li class="nav-item"><a class="nav-link" href="#">Register faktura</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Register inbetaling</a></li>
+    </ul>
+
+    <ng-template #popContent>
+        <div class="popover-content">
+            <div class="float-left">Produsert</div>
+            <div class="float-right">239</div>
+            <div class="clearfix"></div>
+        </div>
+    </ng-template>
+
+    <ul class="nav float-right">
+        <li class="nav-item">
+            <span class="nav-link" role="button" [hidden]="loadingStatus.dataIsLoading">
+                <span class="status-icon" triggers="manual" container="body" #p="ngbPopover" (click)="p.close()" [ngbPopover]="popContent" placement="bottom" popoverTitle="Bekreftelse"></span>
+            </span>
+            <span class="nav-link" role="button" [hidden]="!loadingStatus.dataIsLoading">
+                <span class="loading-icon"></span>
+            </span>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Instllinger</a>
+        </li>
+    </ul>
+</nav>

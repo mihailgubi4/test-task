@@ -1,0 +1,47 @@
+@import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "/node_modules/font-awesome/css/font-awesome.min.css";
+
+a {
+    color: white;
+}
+
+*[role="button"]{
+    cursor: pointer;
+}
+
+button{
+    font-family: Calibri, "Times New Roman";
+    font-size: 17px;
+}
+
+.button-active{
+    color:white;
+    background-color: #6791C0;
+    border-radius:	6px;
+}
+
+.button-disabled{
+    color:white;
+    background-color: #B6CAE1;
+    border-radius:	6px;
+}
+
+/* Override default popoer title */
+.popover-header {
+    color: white;
+    background-color: #546D89;
+    text-align: center;
+}
+
+.bs-popover-auto[x-placement^=bottom] .popover-header::before, .bs-popover-bottom .popover-header::before{
+    border-bottom-color: #546D89;
+}
+
+.bs-popover-auto[x-placement^=bottom] .arrow::after, .bs-popover-bottom .arrow::after, .bs-popover-auto[x-placement^=bottom] .arrow::before, .bs-popover-bottom .arrow::before{
+    border-bottom-color: #546D89;
+}
+
+.popover-content {
+    padding: 5px;
+    width: 120px;
+}

@@ -1,0 +1,27 @@
+<div class="page-header mb-4 mt-5">
+    <button type="button" class="btn button-active" *ngIf="!editMode" (click)="editMode = !editMode">Edit</button>
+    <button type="button" class="btn button-active" *ngIf="editMode" (click)="editMode = !editMode">Save</button>
+</div>
+<div>
+    <table class="table">
+        <thead class="thead-default">
+        <tr>
+            <th>Id</th>
+            <th (click)="sortAlpabetically()">Name<span class="fa float-right" [ngClass]="{'fa-sort-alpha-asc': sortAsc, 'fa-sort-alpha-desc': !sortAsc}"></span></th>
+            <th>Date</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of items">
+            <td scope="row">{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>
+                <input *ngIf="editMode" type="text" [(ngModel)]="item.dateCreated">
+                <span *ngIf="!editMode">{{item.dateCreated}}</span>
+            </td>
+            <td><span role="button" class="fa fa-trash text-danger" (click)="deleteItem(item)"></span></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
