@@ -1,3 +1,11 @@
 .thead-default th {
     background-color: #EFF2F5;
 }
+
+.icon-remove {
+    font-size: 24px;
+}
+
+.icon-remove.disabled {
+    opacity: 0.5;
+}

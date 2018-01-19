@@ -16,8 +16,8 @@ header {
 }
 
 .main-content {
-    margin-left: 50px;
-    width: calc(100% - 50px);
+    margin-left: 125px;
+    width: calc(100% - 125px);
     padding: 0 15px;
 }
 

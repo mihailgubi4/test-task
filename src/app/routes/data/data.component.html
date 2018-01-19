@@ -1,11 +1,11 @@
-<div class="page-header mb-4 mt-5">
+<div class="page-header mb-4 mt-5 ml-3">
     <button type="button" class="btn button-active"
             [disabled]="loadingStatus.dataIsLoaded" (click)="startLoading()"
             [attr.aria-expanded]="loadingStatus.dataIsLoaded" aria-controls="dataTable">Start</button>
     <button type="button" class="btn btn-link" *ngIf="loadingStatus.dataIsLoaded" (click)="startEditing()">Go to editing</button>
 </div>
-<div class="collapse" id="dataTable" [ngbCollapse]="!loadingStatus.dataIsLoaded">
-    <table class="table">
+<div class="collapse" id="dataTable" [ngbCollapse]="!showTable">
+    <table class="table table-bordered w-75">
         <tbody>
         <tr *ngFor="let item of items">
             <td scope="row">{{item.name}}</td>

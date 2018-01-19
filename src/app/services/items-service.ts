@@ -3,10 +3,10 @@ import {Item} from './../models/item';
 export class ItemsService{
 
     private data: Item[] = [
-        { name: "Item15", dateCreated: '12.12.2017', id: 15 },
-        { name: "Another item", dateCreated: '01.10.2018', id: 2 },
-        { name: "Product", dateCreated: '21.02.2018', id: 1 },
-        { name: "Shoes", dateCreated: '10.07.2015', id: 7 }
+        { name: "Item15", dateCreated: '12.12.2017'},
+        { name: "Another item", dateCreated: '01.10.2018'},
+        { name: "Product", dateCreated: '21.02.2018'},
+        { name: "Shoes", dateCreated: '10.07.2015' }
     ];
 
     getData(): Item[] {
@@ -14,13 +14,14 @@ export class ItemsService{
     }
 
     generateRandomItems():any{
-        const count = Math.floor(Math.random() * 100) % 10;
+        //From 1 to 10 items
+        const count = Math.floor(Math.random() * 10) + 1
         let items = [];
 
         for(let i = 0; i < count; i++){
             items.push({
-                name: 'Item name ' + i,
-                title: 'Item title ' + i
+                name: 'Headline ' + i,
+                title: 'Type something ' + String.fromCharCode(97 + i).toUpperCase()
             })
         }
 

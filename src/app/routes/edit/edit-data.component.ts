@@ -15,20 +15,15 @@ export class EditDataComponent {
     sortAsc: boolean = true;
     editMode: boolean = false;
 
-    constructor(private dataService: ItemsService, private loadingStatusService: LoadingStatusService, private router: Router){
-        //check if access is by direct link - then redirect: Proper way to do it is using route guards
-        let status = this.loadingStatusService.getInitialSource();
-
-        if(!status.hasOwnProperty('dataIsLoaded') && status['dataIsLoaded'] === true){
-            this.router.navigate(['']);
-        }
-
+    constructor(private dataService: ItemsService){
         this.dataService.sort(this.sortAsc);
         this.items = this.dataService.getData();
     }
 
     deleteItem(item: Item){
-        this.dataService.removeItem(item);
+        if(this.editMode) {
+            this.dataService.removeItem(item);
+        }
     }
 
     sortAlpabetically(){

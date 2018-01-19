@@ -1,6 +1,12 @@
 @import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "/node_modules/font-awesome/css/font-awesome.min.css";
 
+* {
+    font-family: Calibri;
+    font-size: 17px;
+    color: #525252;
+}
+
 a {
     color: white;
 }
@@ -9,9 +15,29 @@ a {
     cursor: pointer;
 }
 
+table {
+    border: 1px solid #979797;
+}
+
+table thead {
+    background: #EFF2F6;
+    border: 1px solid #979797;
+}
+
+table thead tr th {
+    font-family: Calibri-Bold;
+    font-size: 17px;
+    font-weight: 700;
+    color: #525252;
+}
+
 button{
     font-family: Calibri, "Times New Roman";
     font-size: 17px;
+    background: #6892C1;
+    border-radius: 6px;
+    height: 40px;
+    width: 87px;
 }
 
 .button-active{

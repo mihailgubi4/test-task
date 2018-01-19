@@ -13,16 +13,20 @@ import { Item } from "../../models/item";
 export class DataComponent {
     items: Item[];
     loadingStatus: any;
+    showTable: boolean = false;
 
     constructor(private dataService: ItemsService, private loadingStatusService: LoadingStatusService, private router: Router){
-        this.items = this.dataService.generateRandomItems();
         this.loadingStatus = this.loadingStatusService.getInitialSource();
     }
 
     startLoading():void {
         this.loadingStatus.dataIsLoading = true;
         this.updateStatus();
-        const delay = Math.floor(Math.random() * 10000) % 1000;
+        this.items = this.dataService.generateRandomItems();
+        this.showTable = true;
+
+        //Increased timeout
+        const delay = Math.floor(Math.random() * 100000) % 10000;
 
         console.log('Delay is: ' + delay);
 
