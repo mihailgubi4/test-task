@@ -5,7 +5,7 @@ export class ItemsService{
     private data: Item[] = [
         { name: "Item15", dateCreated: '12.12.2017'},
         { name: "Another item", dateCreated: '01.10.2018'},
-        { name: "Product", dateCreated: '21.02.2018'},
+        { name: "Product", dateCreated: '21.02.2014'},
         { name: "Shoes", dateCreated: '10.07.2015' }
     ];
 
